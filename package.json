@@ -1,0 +1,23 @@
+{
+  "name": "@joing/todojs",
+  "version": "0.0.2",
+  "description": "Todo app for Command Line Interface.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "WonJongin",
+  "license": "MIT",
+  "bin": {
+    "todo": "./app.js"
+  },
+  "preferGlobal": true,
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "cli-progress": "^3.8.2",
+    "commander": "^6.0.0",
+    "inquirer": "^7.3.3",
+    "inquirer-datepicker-prompt": "^0.4.2"
+  },
+  "token": ""
+}
