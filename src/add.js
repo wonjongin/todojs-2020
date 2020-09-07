@@ -8,17 +8,23 @@ inquirer.registerPrompt("datetime", require("inquirer-datepicker-prompt"));
 // const dbInfo = require("../data/db.json");
 
 function sqladd(Utitle, Udescription, Udeadline, Ucategory) {
-  const dataBuffer = fs.readFileSync(os.homedir() + "/todo/data.json");
-  const dataJSON = dataBuffer.toString();
+  // const dataBuffer = fs.readFileSync(os.homedir() + "/todo/data.json");
+  // const dataJSON = dataBuffer.toString();
   console.log("저장 중 💫");
   const input = {
     title: Utitle,
     description: Udescription,
     deadline: Udeadline,
+    state: 0,
     category: Ucategory,
   };
-  const inputJSON = JSON.stringify(dataJSON + "," + input);
-  fs.writeFileSync(os.homedir() + "/todo/data.json", inputJSON);
+  // const inputJSON = JSON.stringify(dataJSON + "," + input);
+  // fs.writeFileSync(os.homedir() + "/todo/data.json", inputJSON);
+  fs.readFile(os.homedir() + "/todo/data.json", function (err, data) {
+    var jsonobj = JSON.parse(data);
+    jsonobj.push(input);
+    fs.writeFileSync(os.homedir() + "/todo/data.json", JSON.stringify(jsonobj));
+  });
   return;
 }
 
@@ -44,7 +50,7 @@ const add = () => {
       },
       {
         type: "input",
-        name: "categry",
+        name: "category",
         message: "할 일의 종류를 입력하세요.🗄 ",
         default: "main",
       },

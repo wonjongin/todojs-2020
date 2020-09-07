@@ -13,6 +13,30 @@ const dataPath = homePath + "/todo";
 
 function list() {
   console.log("정보를 가져옵니다.");
+  fs.readFile(os.homedir() + "/todo/data.json", function (err, data) {
+    var jsonobj = JSON.parse(data);
+    for (i = 0; i < jsonobj.length; i++) {
+      if (jsonobj[i] == null) {
+        continue;
+      } else {
+        console.log(
+          i +
+            " | " +
+            jsonobj[i].title +
+            " | " +
+            jsonobj[i].description +
+            " | " +
+            jsonobj[i].state +
+            " | " +
+            jsonobj[i].deadline +
+            " | " +
+            jsonobj[i].category
+        );
+      }
+    }
+    // console.log(jsonobj.length);
+  });
+  return;
   // for (var i = 0; i < 1000; i++) {}
 }
 
