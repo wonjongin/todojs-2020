@@ -10,5 +10,13 @@ function mkdir() {
     }
   };
   makeFolder(dataPath);
+  if (!fs.existsSync(dataPath + "/data.json"))
+    fs.writeFile(dataPath + "/data.json", "", function (err) {
+      if (err === null) {
+        // console.log("success");
+      } else {
+        // console.log("fail");
+      }
+    });
 }
 module.exports = mkdir;
