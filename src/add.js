@@ -21,7 +21,7 @@ function sqladd(Utitle, Udescription, Udeadline, Ucategory) {
   // const inputJSON = JSON.stringify(dataJSON + "," + input);
   // fs.writeFileSync(os.homedir() + "/todo/data.json", inputJSON);
   fs.readFile(os.homedir() + "/todo/data.json", function (err, data) {
-    if (jsonobj == undefined) {
+    if (false) {
       fs.writeFileSync(os.homedir() + "/todo/data.json", JSON.stringify(input));
     } else {
       var jsonobj = JSON.parse(data);

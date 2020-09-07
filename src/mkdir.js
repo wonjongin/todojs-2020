@@ -11,7 +11,7 @@ function mkdir() {
   };
   makeFolder(dataPath);
   if (!fs.existsSync(dataPath + "/data.json"))
-    fs.writeFile(dataPath + "/data.json", "", function (err) {
+    fs.writeFile(dataPath + "/data.json", "[]", function (err) {
       if (err === null) {
         // console.log("success");
       } else {

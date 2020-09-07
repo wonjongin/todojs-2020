@@ -34,7 +34,6 @@ function list() {
         );
       }
     }
-    // console.log(jsonobj.length);
   });
   return;
   // for (var i = 0; i < 1000; i++) {}
