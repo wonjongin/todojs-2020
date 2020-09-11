@@ -19,6 +19,9 @@ yarn global add @joing/todojs
 ```
 npx @joing/todojs
 ```
+### binary 
+If you want compiled file, visit [here to download](https://github.com/wonjongin/todojs-2020/releases)
+
 ## Usage 
 Just type "todo"!!
 
