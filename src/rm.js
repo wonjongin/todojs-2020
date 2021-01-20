@@ -29,9 +29,8 @@ function rm() {
       .then((answer) => {
         var jsonobj = JSON.parse(data);
         const id = answer.id;
-        delete jsonobj[id];
-        fs.writeFileSync(os.homedir() + "/todo/data.json", "");
-        remove_empty(jsonobj);
+        jsonobj = jsonobj.filter((e) => jsonobj.indexOf(e) !== id);
+        // fs.writeFileSync(os.homedir() + "/todo/data.json", "");
         fs.writeFileSync(
           os.homedir() + "/todo/data.json",
           JSON.stringify(jsonobj)
